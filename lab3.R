@@ -19,7 +19,7 @@ dens_sales <- sales %>%
   mutate(
     dttm = lubridate::mdy_hm(InvoiceDate),
     dom = lubridate::day(dttm),
-    date = lubridate::floor_date(dttm)
+    date = lubridate::floor_date(dttm, unit = "day")
   ) %>% 
   # оставляем только три столбца: номер заказа (нам надо подсчитать их количество)
   # день месяца, страну (для дальнейшего анализа)
